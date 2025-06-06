@@ -17,9 +17,9 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 - Existing solutions rarely provide immediate, context-aware interventions.
 
 **FocusFlow** addresses these gaps by:
-1. Detecting engagement dips in real time using facial landmark tracking and a custom-trained AI model. :contentReference[oaicite:0]{index=0}  
-2. Generating AI-powered quiz questions relevant to the lecture content whenever low engagement is detected. :contentReference[oaicite:1]{index=1}  
-3. Rewinding or reinforcing missed segments so learners can revisit challenging material without losing context. :contentReference[oaicite:2]{index=2}
+1. Detecting engagement dips in real time using facial landmark tracking and a custom-trained AI model.  
+2. Generating AI-powered quiz questions relevant to the lecture content whenever low engagement is detected.
+3. Rewinding or reinforcing missed segments so learners can revisit challenging material without losing context.
 
 ---
 
@@ -27,18 +27,18 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 
 1. **Real-Time Engagement Detection**  
    - Client-side facial landmark extraction via MediaPipe.  
-   - Regression-based engagement model (continuous score) deployed in ONNX on the server. :contentReference[oaicite:3]{index=3}  
+   - Regression-based engagement model (continuous score) deployed in ONNX on the server.
 
 2. **AI-Powered Quiz Generation**  
    - Transcript extraction from video.  
-   - Prompted to Google Gemini API to produce contextually relevant questions. :contentReference[oaicite:4]{index=4}  
+   - Prompted to Google Gemini API to produce contextually relevant questions
 
 3. **Interactive Quiz & Rewind Mode**  
    - Users receive quiz prompts when engagement drops below a threshold.  
    - Option to rewind to review missed segments before continuing.
 
 4. **Analytics Dashboard**  
-   - Engagement plots for individual viewers, helping them understand focus patterns. :contentReference[oaicite:5]{index=5}  
+   - Engagement plots for individual viewers, helping them understand focus patterns.
    - Aggregated class engagement data for instructors, enabling content refinement and pacing adjustments.
 
 ---
@@ -86,16 +86,16 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 
 ## 📐 Architecture & Technical Details
 
-> Detailed in AIED 2025 paper: “FocusFlow: AI-Driven Engagement Monitoring and Interaction for Educational Videos.” :contentReference[oaicite:6]{index=6}
+> Detailed in AIED 2025 paper: “FocusFlow: AI-Driven Engagement Monitoring and Interaction for Educational Videos.” 
 
 1. **Engagement Model**  
-   - Trained offline on DAiSEE and EngageNet datasets. :contentReference[oaicite:7]{index=7}  
-   - Preprocessing pipeline uses MediaPipe to extract 468 facial landmarks per frame, stacks sequences into tensors, and feeds them to a regression model (PyTorch → ONNX). :contentReference[oaicite:8]{index=8}  
+   - Trained offline on DAiSEE and EngageNet datasets.
+   - Preprocessing pipeline uses MediaPipe to extract 468 facial landmarks per frame, stacks sequences into tensors, and feeds them to a regression model (PyTorch → ONNX).
 
 2. **Real-Time Data Flow**  
    - Client captures webcam frames → extracts landmarks → sends JSON to an engagement endpoint.  
    - Server runs ONNX inference (`engagement.onnx`) → returns a continuous score.  
-   - Score saved in a database along with timestamp for later analytics. :contentReference[oaicite:9]{index=9}  
+   - Score saved in a database along with timestamp for later analytics. 
 
 3. **Quiz Generation**  
    - Transcript pulled at upload time or via a video API.  
@@ -103,7 +103,7 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
      1. Reads transcript segments around the current timestamp.  
      2. Crafts a prompt like:  
         > “Generate 3 multiple-choice questions about the concept of [topic snippet] covered in the next 30 seconds of the lecture.”  
-     3. Sends prompt to Gemini API → receives questions JSON → stores them for client display. :contentReference[oaicite:10]{index=10}  
+     3. Sends prompt to Gemini API → receives questions JSON → stores them for client display.
 
 4. **Analytics & Visualization**  
    - Frontend fetches engagement history and renders a time-series chart (e.g., using Chart.js).  
@@ -114,12 +114,12 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 ## 📖 Publication & Demo Links
 
 - **AIED 2025 Conference Paper**:  
-  “FocusFlow: AI-Driven Engagement Monitoring and Interaction for Educational Videos” :contentReference[oaicite:11]{index=11}  
+  “FocusFlow: AI-Driven Engagement Monitoring and Interaction for Educational Videos” 
   – PDF: [AIED_2025_paper_5435.pdf](docs/AIED_2025_paper_5435.pdf)  
   – Published at AIED 2025 (October 27–31, 2025, Dublin, Ireland).  
 
 - **Project Demo Video**:  
-  [YouTube Demo Link](https://www.youtube.com/watch?v=kpvSBbXIIvs) :contentReference[oaicite:12]{index=12}  
+  [YouTube Demo Link](https://www.youtube.com/watch?v=kpvSBbXIIvs) 
 
 ---
 
@@ -137,10 +137,10 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 ## 📚 References
 
 1. **DAiSEE Dataset**  
-   Gupta, A., D’Cunha, A., Awasthi, K., Balasubramanian, V.N. (2016). _DAiSEE: Towards user engagement recognition in the wild._ :contentReference[oaicite:13]{index=13}  
+   Gupta, A., D’Cunha, A., Awasthi, K., Balasubramanian, V.N. (2016). _DAiSEE: Towards user engagement recognition in the wild._ 
 
 2. **EngageNet Dataset**  
-   Singh, M., Hoque, X., Zeng, D., Wang, Y., Ikeda, K., Dhall, A. (2023). _Do I have your attention: A large scale engagement prediction dataset and baselines._ ICMI ’23, pp. 174–182. :contentReference[oaicite:14]{index=14}  
+   Singh, M., Hoque, X., Zeng, D., Wang, Y., Ikeda, K., Dhall, A. (2023). _Do I have your attention: A large scale engagement prediction dataset and baselines._ ICMI ’23, pp. 174–182. 
 
 ---
 
@@ -158,7 +158,7 @@ A lightweight project for detecting facial emotions and boredom.
 
 - **Email**: renanba@mta.ac.il  
 - **Organization Website**:  
-  https://the-jar-team.github.io/focus-flow-client/ :contentReference[oaicite:15]{index=15}  
+  https://the-jar-team.github.io/focus-flow-client/ 
 
 If you encounter any issues or have questions, please open an issue or submit a pull request.
 

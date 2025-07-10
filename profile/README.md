@@ -116,7 +116,7 @@ AI-Driven Engagement Monitoring and Interaction for Educational Videos
 - **AIED 2025 Conference Paper**:  
   “FocusFlow: AI-Driven Engagement Monitoring and Interaction for Educational Videos” 
   – PDF: [AIED_2025_paper_5435.pdf](docs/AIED_2025_paper_5435.pdf)  
-  – Published at AIED 2025 (October 27–31, 2025, Dublin, Ireland).  
+  – Published at AIED 2025 (July 22-26 , Italy, Palermo).  
 
 - **Project Demo Video**:  
   [YouTube Demo Link](https://www.youtube.com/watch?v=kpvSBbXIIvs) 
